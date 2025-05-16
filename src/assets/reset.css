@@ -10,7 +10,7 @@ body {
 }
 input[type="text"],
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
   outline: none;
 }
 button {
