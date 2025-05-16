@@ -13,6 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-register:before {
+  content: "\e6d6";
+}
+
+.icon-setting:before {
+  content: "\e87e";
+}
+
+.icon-login:before {
+  content: "\e657";
+}
+
 .icon-zuochuangkou:before {
   content: "\e80a";
 }
