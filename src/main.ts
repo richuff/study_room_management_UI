@@ -4,7 +4,7 @@ import 'sober'
 //iconfont css文件
 import '@/assets/icon/iconfont.css'
 //全局less文件
-import "@/assets/reset.less"
+import "@/assets/style/reset.less"
 //引入route
 import Route from './route'
 //引入pinia
