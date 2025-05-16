@@ -1,10 +1,10 @@
 <template>
-  <router-view></router-view>
+    <p>login</p>
 </template>
 
 <script setup lang="ts">
-</script>
 
+</script>
 
 <style lang="less" scoped>
 
