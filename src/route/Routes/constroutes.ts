@@ -15,6 +15,14 @@ const constroutes = [
         ]
     },
     {
+        path: '/archive',
+        component: () => import('@/page/archive/index.vue'),
+        name: 'archive',
+        meta: {
+            title: 'archive',
+        },
+    },
+    {
         path: '/404',
         component: () => import('@/common/404/index.vue'),
         name: '404',
