@@ -96,6 +96,10 @@ const ToHome = () => {
 }
 
 .menu_bar_show {
+    z-index: 200;
+    background-color: rgb(233, 234, 241);
+    margin: 0;
+    max-width: @menu-width;
     position: fixed;
     width: @menu-width;
     animation: longToShort 0.4s;
@@ -105,8 +109,14 @@ const ToHome = () => {
     position: fixed;
     animation: shortToLong 0.4s;
 }
+
+s-menu{
+    background-color: rgb(233, 234, 241);
+}
+
 s-menu-item{
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 s-menu-item:hover{
     background-color: rgb(233, 234, 241);
