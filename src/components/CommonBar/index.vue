@@ -1,25 +1,25 @@
 <template>
-    <Topbar :menu="menu" />
-    <s-drawer ref="menu" id="drawer">
-        <div slot="start" :class="{ menu_bar_show: true, menu_bar_hide: !menuStore.isflod }">
+    <Topbar :menu="menu"/>
+    <s-drawer hiddenstart="true" ref="menu" id="drawer">
+        <div slot="start" id="main_menu" :class="{ menu_bar_show: true, menu_bar_hide: menuStore.isflod }">
             <s-menu @click="ToHome" clickable="true">
                 <s-menu-item>
                     <img src="/TT_main.png" class="setting_title"/>
                 </s-menu-item>
             </s-menu>
             <s-menu>
-                <s-menu-item>
-                    <i class="iconfont icon-login" slot="start"></i>
+                <s-menu-item @click="ToLogin">
+                    <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-login" slot="start"></i>
                     <span class="bar_text">登录</span>
                 </s-menu-item>
                 <s-menu-item>
-                    <i class="iconfont icon-register" slot="start"></i>
+                    <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-register" slot="start"></i>
                     <span class="bar_text">注册</span>
                 </s-menu-item>
             </s-menu>
             <s-menu style="max-width: 280px; margin: 0">
                 <s-menu-item>
-                    <i class="iconfont icon-setting" slot="start"></i>
+                    <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-setting" slot="start"></i>
                     <span class="bar_text">设置</span>
                 </s-menu-item>
             </s-menu>
@@ -35,7 +35,7 @@ import { useRouter } from 'vue-router'
 
 let $router = useRouter();
 
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 import { Drawer } from 'sober'
 
 let menuStore = MenuStore()
@@ -44,6 +44,19 @@ const menu = ref<Drawer | null>(null);
 const ToHome = () => {
     $router.push("/home");
 }
+
+const ToLogin = () => {
+    $router.push("/login");
+}
+
+onMounted(()=>{
+    const scrollView:HTMLElement | null = document.querySelector(".main")
+    const menuMain:HTMLDivElement | null = document.querySelector("#main_menu")
+    new ResizeObserver(() => {
+        scrollView?.classList.toggle('main_menu',(menu.value as HTMLElement).offsetWidth >= 1024)
+        menuMain?.classList.toggle('menu_bar_hide', (menu.value as HTMLElement).offsetWidth <= 1024)
+    }).observe(menu.value as Element)
+})
 </script>
 
 <style lang="less">
@@ -96,18 +109,23 @@ const ToHome = () => {
 }
 
 .menu_bar_show {
-    z-index: 200;
+    position: fixed;
     background-color: rgb(233, 234, 241);
+    animation: shortToLong 0.4s;
     margin: 0;
     max-width: @menu-width;
-    position: fixed;
     width: @menu-width;
-    animation: longToShort 0.4s;
+    z-index: 200;
 }
 
 .menu_bar_hide {
     position: fixed;
-    animation: shortToLong 0.4s;
+    animation: longToShort 0.4s;
+}
+
+.icon_hide{
+    transform: scale(0);
+    transition-duration: 400ms;   
 }
 
 s-menu{
