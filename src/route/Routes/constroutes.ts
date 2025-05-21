@@ -38,6 +38,14 @@ const constroutes = [
             title: '登录',
         },
     },
+    {
+        path: '/register',
+        component: () => import('@/common/register/index.vue'),
+        name: 'register',
+        meta: {
+            title: 'register',
+        },
+    },
 ]
 
 export default constroutes;

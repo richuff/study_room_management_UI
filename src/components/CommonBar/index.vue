@@ -2,17 +2,17 @@
     <Topbar :menu="menu"/>
     <s-drawer hiddenstart="true" ref="menu" id="drawer">
         <div slot="start" id="main_menu" :class="{ menu_bar_show: true, menu_bar_hide: menuStore.isflod }">
-            <s-menu @click="ToHome" clickable="true">
+            <s-menu @click="ToHome($router)" clickable="true">
                 <s-menu-item>
                     <img src="/TT_main.png" class="setting_title"/>
                 </s-menu-item>
             </s-menu>
             <s-menu>
-                <s-menu-item @click="ToLogin">
+                <s-menu-item @click="ToLogin($router)">
                     <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-login" slot="start"></i>
                     <span class="bar_text">登录</span>
                 </s-menu-item>
-                <s-menu-item>
+                <s-menu-item @click="ToRegister($router)">
                     <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-register" slot="start"></i>
                     <span class="bar_text">注册</span>
                 </s-menu-item>
@@ -32,22 +32,15 @@
 import Topbar from "@/components/Topbar/index.vue"
 import MenuStore from "@/store/modules/menu";
 import { useRouter } from 'vue-router'
-
-let $router = useRouter();
+import type { Router } from 'vue-router'
+import { ToHome,ToLogin, ToRegister } from "@/utils/router";
+let $router:Router = useRouter();
 
 import { ref,onMounted } from 'vue'
 import { Drawer } from 'sober'
 
 let menuStore = MenuStore()
 const menu = ref<Drawer | null>(null);
-
-const ToHome = () => {
-    $router.push("/home");
-}
-
-const ToLogin = () => {
-    $router.push("/login");
-}
 
 onMounted(()=>{
     const scrollView:HTMLElement | null = document.querySelector(".main")
@@ -88,8 +81,6 @@ onMounted(()=>{
         margin-top: 10px;
     }
 }
-
-
 
 #drawer {
     padding-top: @menu-height;
