@@ -14,14 +14,16 @@
 <script setup lang="ts">
 import MenuStore from '@/store/modules/menu';
 let menuStore = MenuStore()
+
 </script>
 
 <style lang="less" scoped>
 @import url("../../assets/style.less");
 
 .bottombar{
+    height: @bottom-height;
     width: 100%;
-    height: 9rem;
+    padding: 10px;
     background-color: white;
     .text{
         padding-top: 10px;
