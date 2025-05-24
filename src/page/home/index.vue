@@ -3,7 +3,6 @@
         <s-scroll-view @scroll="scroll" :class="{ main: true, main_menu: !menuStore.isflod }">
                 <s-card :clickable="true" class="card">
                     <div slot="image">
-                        <img src="/BG_Spring.jpg" />
                     </div>
                     <div slot="headline">Headline</div>
                     <div slot="subhead">Subhead</div>
@@ -11,16 +10,7 @@
                 </s-card>
                 <s-card :clickable="true" class="card">
                     <div slot="image">
-                        <img src="/BG_Spring.jpg" />
-                    </div>
-                    <div slot="headline">Headline</div>
-                    <div slot="subhead">Subhead</div>
-                    <div slot="text">Cards are often used for grid lists, which provide click effects</div>
-                </s-card>
-                <br>
-                <s-card :clickable="true" class="card">
-                    <div slot="image">
-                        <img src="/BG_Spring.jpg" />
+                        
                     </div>
                     <div slot="headline">Headline</div>
                     <div slot="subhead">Subhead</div>
@@ -29,7 +19,6 @@
                 <br>
                 <s-card :clickable="true" class="card">
                     <div slot="image">
-                        <img src="/BG_Spring.jpg" />
                     </div>
                     <div slot="headline">Headline</div>
                     <div slot="subhead">Subhead</div>
@@ -38,7 +27,21 @@
                 <br>
                 <s-card :clickable="true" class="card">
                     <div slot="image">
-                        <img src="/BG_Spring.jpg" />
+                    </div>
+                    <div slot="headline">Headline</div>
+                    <div slot="subhead">Subhead</div>
+                    <div slot="text">Cards are often used for grid lists, which provide click effects</div>
+                </s-card>
+                <br>
+                <s-card :clickable="true" class="card">
+                    <div slot="image">
+                    </div>
+                    <div slot="headline">Headline</div>
+                    <div slot="subhead">Subhead</div>
+                    <div slot="text">Cards are often used for grid lists, which provide click effects</div>
+                </s-card>
+                <s-card :clickable="true" class="card">
+                    <div slot="image">
                     </div>
                     <div slot="headline">Headline</div>
                     <div slot="subhead">Subhead</div>

@@ -1,0 +1,169 @@
+@import url("../../assets/style.less");
+
+.appbar {
+    animation: whiteToTrans 0.2s;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+    height: @menu-height;
+
+    .icon_box {
+        margin-left: 0.83rem;
+        margin-right: 1.25rem;
+        margin-bottom: 0.625rem;
+        margin-top: 0.41rem;
+
+        .top_icon {
+            height:1.05rem;
+            width: 1.05rem;
+            animation: blackToWhite 0.1;
+            color: white;
+        }
+
+        .top_text {
+            margin-left: 0.2rem;
+            font-size: 1rem;
+            animation: blackToWhite 0.1;
+            color: white;
+        }
+        
+        .menu_item{
+            width:2.5rem;
+            padding-left: 1rem;
+        }
+
+        .menu_text{
+            font-size: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu_items{
+            width:2.5rem;
+            padding-left: 0.54rem;
+        }
+    }
+
+    .icon_box:hover {
+        cursor: pointer;
+
+        .top_icon {
+            color: rgb(226, 171, 234);
+        }
+
+        .top_text {
+            color: rgb(226, 171, 234);
+        }
+    }
+}
+
+.icon_background {
+    animation: transToWhite 0.2s;
+    background-color: white;
+
+    .icon_box {
+        margin-left: 0.83rem;
+        margin-right: 1.25rem;
+        margin-bottom: 0.625rem;
+
+        .top_icon {
+            height: 1rem;
+            width: 1rem;
+            animation: whiteToBlack 0.1;
+            color: black;
+        }
+
+        .top_text {
+            font-size: 1rem;
+            animation: whiteToBlack 0.1;
+            color: black;
+        }
+    }
+
+    .icon_box:hover {
+        cursor: pointer;
+
+        .top_icon {
+            color: rgb(49, 41, 135);
+        }
+
+        .top_text {
+            color: rgb(49, 41, 135);
+        }
+    }
+}
+
+.search_button {
+    min-height: 1.6rem !important;
+    width: 12.5rem;
+    height: 1.6rem;
+    .search_box{
+        height: 1rem;
+        width: 1rem;
+    }
+    .close_box{
+        height: 1rem;
+        width: 1rem;
+    }
+    .search_icon{
+        height: 1rem;
+        width: 1rem;
+    }
+    .close_icon{
+        height: 1rem;
+        width: 1rem;
+    }
+}
+
+.title_img {
+    width: 11rem;
+    height: 2rem;
+    object-fit: cover;
+    /* 图片按比例填充容器 */
+    margin-left: 0.83rem;
+    margin-right: 0.42rem;
+}
+
+.title_img:hover {
+    cursor: pointer;
+}
+
+@keyframes transToWhite {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: white;
+    }
+}
+
+@keyframes whiteToTrans {
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes whiteToBlack {
+    from {
+        color: white;
+    }
+
+    to {
+        color: black;
+    }
+}
+
+@keyframes blackToWhite {
+    from {
+        color: black;
+    }
+
+    to {
+        color: white;
+    }
+}

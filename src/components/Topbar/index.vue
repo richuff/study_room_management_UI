@@ -29,11 +29,11 @@
 
         <s-search placeholder="搜索关键字..." class="search_button" :value="search_text"
             @input="getText($event as InputEvent)">
-            <s-icon-button slot="start" @click="start_search">
-                <s-icon name="search" ></s-icon>
+            <s-icon-button slot="start"  class="search_box" @click="start_search">
+                <s-icon name="search" class="search_icon"></s-icon>
             </s-icon-button>
-            <s-icon-button slot="end" @click="clear_search">
-                <s-icon name="close"></s-icon>
+            <s-icon-button slot="end" class="close_box" @click="clear_search">
+                <s-icon name="close" class="close_icon"></s-icon>
             </s-icon-button>
         </s-search>
         <img @click="ToHome" src="/TT_main.png" class="title_img">
@@ -92,155 +92,5 @@ const start_search = ()=>{
 </script>
 
 <style lang="less" scoped>
-@import url("../../assets/style.less");
-
-.appbar {
-    animation: whiteToTrans 0.2s;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    background-color: transparent;
-    height: @menu-height;
-
-    .icon_box {
-        margin-left: 20px;
-        margin-right: 30px;
-        margin-bottom: 15px;
-        margin-top: 10px;
-
-        .top_icon {
-            height: 25px;
-            width: 25px;
-            animation: blackToWhite 0.1;
-            color: white;
-        }
-
-        .top_text {
-            margin-left: 4px;
-            font-size: medium;
-            animation: blackToWhite 0.1;
-            color: white;
-        }
-        
-        .menu_item{
-            width:60px;
-            padding-left: 23px;
-        }
-
-        .menu_text{
-            justify-content: center;
-            align-items: center;
-        }
-        .menu_items{
-            width:60px;
-            padding-left: 13px;
-        }
-    }
-
-    .icon_box:hover {
-        cursor: pointer;
-
-        .top_icon {
-            color: rgb(226, 171, 234);
-        }
-
-        .top_text {
-            color: rgb(226, 171, 234);
-        }
-    }
-}
-
-.icon_background {
-    animation: transToWhite 0.2s;
-    background-color: white;
-
-    .icon_box {
-        margin-left: 20px;
-        margin-right: 30px;
-        margin-bottom: 15px;
-
-        .top_icon {
-            height: 25px;
-            width: 25px;
-            animation: whiteToBlack 0.1;
-            color: black;
-        }
-
-        .top_text {
-            font-size: medium;
-            animation: whiteToBlack 0.1;
-            color: black;
-        }
-    }
-
-    .icon_box:hover {
-        cursor: pointer;
-
-        .top_icon {
-            color: rgb(49, 41, 135);
-        }
-
-        .top_text {
-            color: rgb(49, 41, 135);
-        }
-    }
-}
-
-.search_button {
-    width: 300px;
-    height: 40px;
-}
-
-.title_img {
-    width: 22%;
-    height: 80%;
-    object-fit: cover;
-    /* 图片按比例填充容器 */
-    margin-left: 20px;
-    margin-right: 10px;
-}
-
-.title_img:hover {
-    cursor: pointer;
-}
-
-@keyframes transToWhite {
-    from {
-        background-color: transparent;
-    }
-
-    to {
-        background-color: white;
-    }
-}
-
-@keyframes whiteToTrans {
-    from {
-        background-color: white;
-    }
-
-    to {
-        background-color: transparent;
-    }
-}
-
-@keyframes whiteToBlack {
-    from {
-        color: white;
-    }
-
-    to {
-        color: black;
-    }
-}
-
-@keyframes blackToWhite {
-    from {
-        color: black;
-    }
-
-    to {
-        color: white;
-    }
-}
+@import url('./index.less');
 </style>
