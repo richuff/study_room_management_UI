@@ -9,6 +9,8 @@ import "@/assets/style/reset.less"
 import Route from './route'
 //引入pinia
 import pinia from '@/store/index'
+//引入rem适配文件
+import './utils/font/rem'
 
 const app = createApp(App)
 
