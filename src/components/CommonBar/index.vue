@@ -17,7 +17,7 @@
                     <span class="bar_text">注册</span>
                 </s-menu-item>
             </s-menu>
-            <s-menu style="max-width: 280px; margin: 0">
+            <s-menu>
                 <s-menu-item>
                     <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-setting" slot="start"></i>
                     <span class="bar_text">设置</span>
@@ -48,126 +48,12 @@ onMounted(()=>{
     new ResizeObserver(() => {
         scrollView?.classList.toggle('main_menu',(menu.value as HTMLElement).offsetWidth >= 1024)
         menuMain?.classList.toggle('menu_bar_hide', (menu.value as HTMLElement).offsetWidth <= 1024)
+    
+        menuMain?.classList.toggle('test', (menu.value as HTMLElement).offsetWidth <= 400)
     }).observe(menu.value as Element)
 })
 </script>
 
 <style lang="less">
-@import url("../../assets/style.less");
-
-.main {
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    animation: rightToLeft 0.4s;
-
-    .card {
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-}
-
-.main_menu {
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    animation: leftToRight 0.4s;
-    animation-fill-mode: forwards;
-
-    .card {
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-}
-
-#drawer {
-    padding-top: @menu-height;
-    height: calc(100vh - @menu-height);
-    .bar_text{
-        margin-left: 5px;
-    }
-    .setting_title{
-        height: 100%;
-        width: 100%;
-        object-fit:cover;
-    }
-}
-
-.title_icon {
-    margin-left: 10px;
-}
-
-.menu_bar_show {
-    position: fixed;
-    background-color: rgb(233, 234, 241);
-    animation: shortToLong 0.4s;
-    margin: 0;
-    max-width: @menu-width;
-    width: @menu-width;
-    z-index: 200;
-}
-
-.menu_bar_hide {
-    position: fixed;
-    animation: longToShort 0.4s;
-}
-
-.icon_hide{
-    transform: scale(0);
-    transition-duration: 400ms;   
-}
-
-s-menu{
-    background-color: rgb(233, 234, 241);
-}
-
-s-menu-item{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-s-menu-item:hover{
-    background-color: rgb(233, 234, 241);
-}
-
-@keyframes shortToLong {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: @menu-width;
-    }
-}
-
-@keyframes longToShort {
-    from {
-        width: @menu-width;
-    }
-
-    to {
-        width: 0;
-    }
-}
-
-@keyframes rightToLeft {
-    from {
-        margin-left: @menu-width;
-    }
-
-    to {
-        margin-left: 10;
-    }
-}
-
-@keyframes leftToRight {
-    from {
-        margin-left: 10;
-    }
-
-    to {
-        margin-left: @menu-width;
-    }
-}
+@import url('./index.less');
 </style>

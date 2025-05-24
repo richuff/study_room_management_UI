@@ -1,0 +1,122 @@
+@import url("../../assets/style.less");
+
+.main {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    animation: rightToLeft 0.4s;
+
+    .card {
+        margin-left: 0.42rem;
+        margin-top: 0.42rem;
+    }
+}
+
+s-menu{
+    height: 6rem;
+}
+
+s-menu-item{
+    height: 4rem;
+}
+.main_menu {
+    height: 100%;
+    width: 100%;
+    animation: leftToRight 0.4s;
+    animation-fill-mode: forwards;
+
+    .card {
+        margin-left: 0.42rem;
+        margin-top: 0.42rem;
+    }
+}
+
+#drawer {
+    padding-top: @menu-height;
+    height: calc(100vh - @menu-height);
+    .bar_text{
+        margin-left: 0.42rem;
+    }
+    .setting_title{
+        height: 100%;
+        width: 100%;
+        object-fit:cover;
+    }
+}
+
+.title_icon {
+    margin-left: 0.42rem;
+}
+
+.menu_bar_show {
+    position: fixed;
+    background-color: rgb(233, 234, 241);
+    animation: shortToLong 0.4s;
+    margin: 0;
+    max-width: @menu-width;
+    width: @menu-width;
+    z-index: 200;
+}
+
+.menu_bar_hide {
+    position: fixed;
+    animation: longToShort 0.4s;
+}
+
+.icon_hide{
+    transform: scale(0);
+    transition-duration: 400ms;   
+}
+
+s-menu{
+    background-color: rgb(233, 234, 241);
+}
+
+s-menu-item{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+s-menu-item:hover{
+    background-color: rgb(233, 234, 241);
+}
+
+@keyframes shortToLong {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: @menu-width;
+    }
+}
+
+@keyframes longToShort {
+    from {
+        width: @menu-width;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        margin-left: @menu-width;
+    }
+
+    to {
+        margin-left: 10;
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        margin-left: 10;
+    }
+
+    to {
+        margin-left: @menu-width;
+    }
+}

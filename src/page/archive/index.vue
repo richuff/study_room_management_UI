@@ -1,7 +1,7 @@
 <template>
     <CommonBar>
         <s-scroll-view @scroll="scroll" :class="{ main: true, main_menu: !menuStore.isflod }">
-            <div>cnm</div>
+            <div></div>
         </s-scroll-view>
     </CommonBar>
 </template>
