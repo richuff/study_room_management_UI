@@ -1,0 +1,54 @@
+@import url("../../assets/style.less");
+
+.bottombar{
+    animation: LongToShort 0.4s;
+    animation-fill-mode: forwards;
+}
+.bottombar_hide{
+    height: @bottom-height;
+    width: 100%;
+    padding: 0.42rem;
+    background-color: white;
+    .text{
+        padding-top: 0.42rem;
+        margin-top: 0.42rem;
+        margin-bottom: 0.2rem;
+        text-align: center;
+        padding-right: @menu-width;
+    }
+    .text_hide{
+        padding-top: 0.42rem;
+        margin-top: 0.42rem;
+        margin-bottom: 0.42rem;
+        text-align: center;
+    }
+    .link{
+        margin-top: 0.2rem;
+        text-align: center;
+        padding-right: @menu-width;
+    }
+    .link_hide{
+        margin-top: 0.2rem;
+        text-align: center;
+    }
+    .split{
+        margin: 0 0.2rem 0 0.2rem;
+    }
+    .split::before,
+    .split::after{
+        content: '';
+        border-left: solid 1px var(--s-color-outline-variant, black);
+    }
+    a{
+        color: rgb(38, 52, 115);
+    }
+}
+
+@keyframes LongToShort {
+    from{
+        width: 100%;
+    }
+    to{
+        width: calc(100% - @menu-width);
+    }
+}

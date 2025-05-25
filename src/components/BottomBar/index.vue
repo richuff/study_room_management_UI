@@ -1,6 +1,6 @@
 <template>
-    <div class="bottombar">
-        <div :class="{text:!menuStore.isflod,text_hide:menuStore.isflod}">KivoWiki ©2023 Created by HyacinthusAcademy</div>
+    <div :class="{bottombar_hide:true,bottomba:menuStore.isflod}">
+        <div :class="{text:!menuStore.isflod,text_hide:menuStore.isflod}">study_room_management ©2025 Created by richuff</div>
         <div :class="{text:!menuStore.isflod,text_hide:menuStore.isflod}">Version: 1.0.0-beta</div>
         <s-divider></s-divider>
         <div :class="{link:!menuStore.isflod,link_hide:menuStore.isflod}">
@@ -18,42 +18,5 @@ let menuStore = MenuStore()
 </script>
 
 <style lang="less" scoped>
-@import url("../../assets/style.less");
-
-.bottombar{
-    height: @bottom-height;
-    width: 100%;
-    padding: 10px;
-    background-color: white;
-    .text{
-        padding-top: 10px;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        text-align: center;
-        padding-right: @menu-width;
-    }
-    .text_hide{
-        padding-top: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    .link{
-        margin-top: 5px;
-        text-align: center;
-        padding-right: @menu-width;
-    }
-    .link_hide{
-        margin-top: 5px;
-        text-align: center;
-    }
-    .split{
-        margin: 0 10px 0 10px;
-    }
-    .split::before,
-    .split::after{
-        content: '';
-        border-left: solid 1px var(--s-color-outline-variant, black);
-    }
-}
+@import url('./index.less');
 </style>
