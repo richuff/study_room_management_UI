@@ -1,0 +1,82 @@
+.main {
+  height: calc(98vh - 2.1rem);
+}
+.main .main_bar {
+  background-color: white;
+  height: calc(91vh - 2.1rem - 7rem);
+  width: calc(100vw - 1.7rem);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #efeff5;
+  margin: 0.42rem 0.42rem 0.42rem 0.42rem;
+  padding: 0.42rem;
+}
+.main .main_bar .title {
+  font-size: 2rem;
+  text-align: center;
+}
+.main .main_bar s-text-field {
+  display: block;
+  width: 96%;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-top: 0.8rem;
+}
+.main .main_bar s-button {
+  display: block;
+  width: 96%;
+  margin-left: 0.83rem;
+  margin-top: 0.83rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  justify-content: center;
+  padding-top: 0.3rem;
+  align-items: center;
+}
+.main .main_bar .register {
+  height: 70%;
+}
+.main .main_bar .register .code {
+  width: 30%;
+  display: inline-block;
+}
+.main .main_bar .other_register {
+  margin-top: 3.2rem;
+  background-color: #fafafc;
+  height: calc(90vh - 2.1rem - 7rem - 80%);
+  text-align: center;
+  padding-top: 0.83rem;
+  font-size: 1.1rem;
+}
+.main .main_bar .other_register .tologin {
+  color: #263473;
+}
+.main .main_bar .other_register .tologin:hover {
+  cursor: pointer;
+}
+.main_menu {
+  height: calc(98vh - 2.1rem);
+}
+.main_menu .main_bar {
+  border-style: solid;
+  height: calc(91vh - 2.1rem - 7rem);
+  animation: moveWidth 0.4s;
+  width: calc(100vw - 10rem - 40px);
+  border-width: 1px;
+  border-color: #efeff5;
+  margin: 0.42rem 0.42rem 0.42rem 0.42rem;
+  padding: 0.42rem;
+}
+.main_menu .other_login {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #fafafc;
+}
+@keyframes moveWidth {
+  from {
+    width: calc(100vw - 0.83rem);
+  }
+  to {
+    width: calc(100vw - 10rem - 1.67rem);
+  }
+}

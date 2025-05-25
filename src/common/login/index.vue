@@ -2,13 +2,20 @@
     <CommonBar>
         <s-scroll-view :class="{ main: true, main_menu: !menuStore.isflod }">
             <div class="main_bar">
-                <div class="title">登录账号</div>
-                <s-text-field label="再次确认密码"></s-text-field> 
-                <s-text-field label="用户名或邮箱"></s-text-field>
-                <s-text-field label="密码"></s-text-field>
-
-                <s-button>开始存档</s-button>
-                <s-button @click="ToRegister($router)">还没有账户?戳我注册</s-button>       
+                <div class="login">
+                    <div class="title">登录账号</div>
+                    <s-text-field label="用户名或邮箱"></s-text-field>
+                    <s-text-field label="密码"></s-text-field>
+                    <div class="forget-pass">
+                        <a href="">忘记密码</a>
+                    </div>
+                    <s-button>开始存档</s-button>
+                    <s-button @click="ToRegister($router)">还没有账户?戳我注册</s-button>       
+                    <s-divider style="margin-top: 1.8rem;">使用第三方登录</s-divider>
+                </div>
+                <div class="other_login">
+                    <i class="iconfont icon-erweima"></i>
+                </div>
             </div>
             <BottomBar></BottomBar>
         </s-scroll-view>
@@ -27,51 +34,14 @@ import { onMounted } from 'vue';
 
 onMounted(() => {
     menuStore.showBack = true
+    const i = document.querySelector("i")
+    window.addEventListener('resize',()=>{
+        console.log(Number.parseInt(i!.style.padding) + 1) 
+        i!.style.padding = (Number.parseInt(i!.style.padding) + 1).toString()
+    })
 })
 </script>
 
 <style lang="less" scoped>
-@import url("../../assets/style.less");
-
-.main{
-    height: calc(98vh - @menu-height);
-
-    .main_bar{
-        background-color: white;
-        height: calc(98vh - @menu-height - @bottom-height);
-        width: calc(100vw - 40px);
-
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(239, 239, 245);
-        margin: 10px 10px 10px 5px;
-        padding: 10px;
-        .title{
-            
-        }
-    }
-}
-
-.main_menu{
-    height: calc(98vh - @menu-height);
-    .main_bar{
-        border-style: solid;
-        height: calc(98vh - @menu-height - @bottom-height);
-        animation: moveWidth 0.4s;
-        width: calc(100vw - @menu-width - 40px);
-        border-width: 1px;
-        border-color: rgb(239, 239, 245);
-        margin: 10px 10px 10px 10px;
-        padding: 10px;
-    }
-}
-
-@keyframes moveWidth {
-    from{
-        width: calc(100vw - 20px);
-    }
-    to{
-        width: calc(100vw - @menu-width - 40px);
-    }
-}
+@import url('./index.less');
 </style>
