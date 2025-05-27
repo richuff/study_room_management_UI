@@ -1,8 +1,8 @@
-.bottombar {
+.bottombar_hide {
   animation: LongToShort 0.4s;
   animation-fill-mode: forwards;
 }
-.bottombar_hide {
+.bottombar {
   position: absolute;
   bottom: 0;
   height: 7rem;
@@ -10,44 +10,62 @@
   padding: 0.42rem;
   background-color: white;
 }
-.bottombar_hide .text {
+.bottombar .text {
+  font-size: 1rem;
   padding-top: 0.42rem;
   margin-top: 0.42rem;
   margin-bottom: 0.2rem;
   text-align: center;
   padding-right: 10rem;
 }
-.bottombar_hide .text_hide {
+.bottombar .text_hide {
+  font-size: 1rem;
   padding-top: 0.42rem;
   margin-top: 0.42rem;
   margin-bottom: 0.42rem;
   text-align: center;
 }
-.bottombar_hide .link {
-  margin-top: 0.2rem;
+.bottombar .link {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  margin-top: 0.1rem;
   text-align: center;
   padding-right: 10rem;
 }
-.bottombar_hide .link_hide {
-  margin-top: 0.2rem;
+.bottombar .link_hide {
+  height: 3rem;
+  margin-top: 0.1rem;
   text-align: center;
 }
-.bottombar_hide .split {
-  margin: 0 0.2rem 0 0.2rem;
+.bottombar .split {
+  display: inline-flex;
+  align-items: center;
+  height: 1rem;
+  margin: 0.2rem 0.2rem 0 0.2rem;
 }
-.bottombar_hide .split::before,
-.bottombar_hide .split::after {
+.bottombar .split::before,
+.bottombar .split::after {
+  height: 1rem;
+  line-height: 1rem;
   content: '';
-  border-left: solid 1px var(--s-color-outline-variant, black);
+  border-left: solid 0.042rem var(--s-color-outline-variant, black);
 }
-.bottombar_hide a {
+.bottombar a {
+  display: inline-flex;
+  align-items: center;
+  height: 1rem;
   color: #263473;
+}
+.bottombar a span {
+  height: 1rem;
+  font-size: 1rem;
 }
 @keyframes LongToShort {
   from {
-    width: 100%;
+    width: calc(100% - 10rem);
   }
   to {
-    width: calc(100% - 10rem);
+    width: 100%;
   }
 }
