@@ -8,7 +8,7 @@
   border-width: 2px;
   border-style: solid;
   border-color: #efeff5;
-  margin: 0.42rem 0.42rem 0.42rem 0.42rem;
+  margin: 0.4rem auto;
   padding: 0.42rem;
 }
 .main .main_bar .title {
@@ -16,17 +16,20 @@
   text-align: center;
 }
 .main .main_bar s-text-field {
+  min-height: 3rem !important;
   display: block;
   width: 96%;
+  height: 3rem;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
-  margin-top: 0.8rem;
+  margin-top: 0.7rem;
 }
 .main .main_bar s-button {
+  height: 2rem;
   display: block;
   width: 96%;
   margin-left: 0.83rem;
-  margin-top: 0.83rem;
+  margin-top: 0.8rem;
   border-radius: 0.2rem;
   text-align: center;
   justify-content: center;

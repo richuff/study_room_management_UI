@@ -16,14 +16,14 @@
                     <div @click="ToLogin($router)">已经有账户?<span class="tologin">戳我登录</span></div>
                 </div>
             </div>
-            <BottomBar></BottomBar>
+            <BottomBarWithFixed></BottomBarWithFixed>
         </s-scroll-view>
     </CommonBar>
 </template>
 
 <script setup lang="ts">
 import CommonBar from '@/components/CommonBar/index.vue'
-import BottomBar from '@/components/BottomBar/index.vue'
+import BottomBarWithFixed from '@/components/BottomBarWithFixed/index.vue'
 import MenuStore from '@/store/modules/menu';
 let menuStore  = MenuStore()
 import { ToLogin } from '@/utils/router';
