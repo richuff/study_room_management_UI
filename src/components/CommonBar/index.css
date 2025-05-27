@@ -9,12 +9,6 @@
   margin-left: 0.42rem;
   margin-top: 0.42rem;
 }
-s-menu {
-  height: 6rem;
-}
-s-menu-item {
-  height: 4rem;
-}
 .main_menu {
   height: 100%;
   width: 100%;
@@ -30,10 +24,14 @@ s-menu-item {
   height: calc(100vh - 2.1rem);
 }
 #drawer .bar_text {
+  font-size: 1rem;
   margin-left: 0.42rem;
 }
-#drawer .setting_title {
-  height: 100%;
+#drawer .title_icon {
+  height: 2rem;
+}
+#drawer .title_icon .setting_title {
+  height: 1.5rem;
   width: 100%;
   object-fit: cover;
 }
@@ -58,9 +56,11 @@ s-menu-item {
   transition-duration: 400ms;
 }
 s-menu {
+  height: 6rem;
   background-color: #e9eaf1;
 }
 s-menu-item {
+  height: 4rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }
