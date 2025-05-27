@@ -22,7 +22,7 @@
             </s-popup-menu>
         </div>
 
-        <div slot="headline" class="icon_box" @click="ToHome">
+        <div slot="headline" class="icon_box" @click="ToHome($router)">
             <s-icon class="top_icon" name="home"></s-icon>
             <span class="top_text">主页</span>
         </div>
@@ -36,16 +36,16 @@
                 <s-icon name="close" class="close_icon"></s-icon>
             </s-icon-button>
         </s-search>
-        <img @click="ToHome" src="/TT_main.png" class="title_img">
+        <img @click="ToHome($router)" src="/TT_main.png" class="title_img">
     </s-appbar>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { Drawer } from 'sober'
 import MenuStore from '@/store/modules/menu'
 import { useRouter } from 'vue-router'
-
+import { ToHome } from '@/utils/router'
 let $router = useRouter();
 
 interface Props {
@@ -73,18 +73,6 @@ const getText = (i: InputEvent) => {
 const clear_search = () => {
     search_text.value = ""
 }
-
-const ToHome = () => {
-    $router.push("/home")
-}
-
-onMounted(() => {
-    if (menuStore.isflod) {
-        props.menu?.close()
-    } else {
-        props.menu?.show()
-    }
-})
 
 const start_search = ()=>{
     window.open("https://cn.bing.com/search?q=" + search_text.value.trim());

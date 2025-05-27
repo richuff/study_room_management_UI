@@ -2,10 +2,8 @@
     <Topbar :menu="menu"/>
     <s-drawer hiddenstart="true" ref="menu" id="drawer">
         <div slot="start" id="main_menu" :class="{ menu_bar_show: true, menu_bar_hide: menuStore.isflod }">
-            <s-menu @click="ToHome($router)" clickable="true">
-                <s-menu-item>
-                    <img src="/TT_main.png" class="setting_title"/>
-                </s-menu-item>
+            <s-menu @click="ToHome($router)" class="title_icon" clickable="true">
+                <img src="/TT_main.png" class="setting_title"/>
             </s-menu>
             <s-menu>
                 <s-menu-item @click="ToLogin($router)">
@@ -45,6 +43,7 @@ const menu = ref<Drawer | null>(null);
 onMounted(()=>{
     const scrollView:HTMLElement | null = document.querySelector(".main")
     const menuMain:HTMLDivElement | null = document.querySelector("#main_menu")
+    
     new ResizeObserver(() => {
         scrollView?.classList.toggle('main_menu',(menu.value as HTMLElement).offsetWidth >= 1024)
         menuMain?.classList.toggle('menu_bar_hide', (menu.value as HTMLElement).offsetWidth <= 1024)
