@@ -3,13 +3,13 @@
 .main{
     height: calc(98vh - @menu-height);
     .main_bar{
+        margin: 0.4rem auto;
         background-color: white;
         height: calc(42rem - @menu-height - @bottom-height);
         width: calc(100vw - 40px);
         border-width: 2px;
         border-style: solid;
         border-color: rgb(239, 239, 245);
-        margin: .4rem .4rem .4rem .4rem;
         padding: .4rem;
         .title{
             font-size: 2rem;
@@ -18,7 +18,8 @@
         s-text-field{
             display: block;
             width: 96%;
-            height: 0.1rem;
+            min-height: 3rem !important;
+            height: 3rem;
             padding-left:0.8rem;
             padding-right: 0.8rem;
             margin-top: 0.8rem;
@@ -51,16 +52,17 @@
             height: 10rem;
             text-align: center;
             .iconfont{
+                font-size: 1.5rem;
                 position: relative;
                 top: 1.25rem;
-                padding: 0.6rem;
+                padding: 1rem;
                 border-radius: 50%;
-                border: 1px rgb(226, 226, 232) solid; 
+                border: 0.042rem rgb(226, 226, 232) solid; 
             }
             .iconfont:hover{
                 cursor: pointer;
                 color: rgb(52, 71, 156);
-                border: 1px rgb(52, 71, 156) solid; 
+                border: 0.042rem rgb(52, 71, 156) solid; 
             }
         }
     }
@@ -68,9 +70,11 @@
 
 .main_menu{
     .main_bar{
+        margin: 0.4rem 0.4rem 0.4rem 0.4rem;
         animation: moveWidth 0.4s;
         width: calc(100vw - @menu-width - 1.6rem);
     }
+
 }
 
 @keyframes moveWidth {

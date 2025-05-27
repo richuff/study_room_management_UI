@@ -1,6 +1,6 @@
 <template>
     <CommonBar>
-        <s-scroll-view :class="{ main: true, main_menu: !menuStore.isflod }">
+        <div :class="{ main: true, main_menu: !menuStore.isflod }">
             <div class="main_bar">
                 <div class="login">
                     <div class="title">登录账号</div>
@@ -17,14 +17,14 @@
                     <i class="iconfont icon-erweima"></i>
                 </div>
             </div>
-            <BottomBar></BottomBar>
-        </s-scroll-view>
+            <BottomBarWithFixed></BottomBarWithFixed>
+        </div>
     </CommonBar>
 </template>
 
 <script setup lang="ts">
 import CommonBar from '@/components/CommonBar/index.vue'
-import BottomBar from '@/components/BottomBar/index.vue'
+import BottomBarWithFixed from '@/components/BottomBarWithFixed/index.vue'
 import MenuStore from '@/store/modules/menu';
 import { ToRegister } from '@/utils/router';
 import { useRouter } from 'vue-router';
@@ -34,11 +34,11 @@ import { onMounted } from 'vue';
 
 onMounted(() => {
     menuStore.showBack = true
-    const i = document.querySelector("i")
-    window.addEventListener('resize',()=>{
-        console.log(Number.parseInt(i!.style.padding) + 1) 
-        i!.style.padding = (Number.parseInt(i!.style.padding) + 1).toString()
-    })
+    // const i = document.querySelector("i")
+    // window.addEventListener('resize',()=>{
+    //     console.log(Number.parseInt(i!.style.padding) + 1) 
+    //     i!.style.padding = (Number.parseInt(i!.style.padding) + 1).toString()
+    // })
 })
 </script>
 
