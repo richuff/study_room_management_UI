@@ -6,7 +6,7 @@
         <div :class="{link:!menuStore.isflod,link_hide:menuStore.isflod}">
             <a href="">使用条款和声明</a>
             <span class="split"></span>
-            <a href="https://www.wenjuan.com/s/UZBZJvneoZ/">意见反馈</a>
+            <a href="https://www.wjx.cn/vm/rgemVBd.aspx">意见反馈</a>
         </div>
     </div>
 </template>

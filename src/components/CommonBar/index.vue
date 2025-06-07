@@ -5,7 +5,7 @@
             <s-menu @click="ToHome($router)" class="title_icon" clickable="true">
                 <img src="/TT_main.png" class="setting_title"/>
             </s-menu>
-            <s-menu>
+            <s-menu v-if="userStore.token==null?true:false">
                 <s-menu-item @click="ToLogin($router)">
                     <i :class="[menuStore.isflod ? 'icon_hide' : '']" class="iconfont icon-login" slot="start"></i>
                     <span class="bar_text">登录</span>
@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import Topbar from "@/components/Topbar/index.vue"
 import MenuStore from "@/store/modules/menu";
+import UserStore from "@/store/modules/user";
 import { useRouter } from 'vue-router'
 import type { Router } from 'vue-router'
 import { ToHome,ToLogin, ToRegister } from "@/utils/router";
@@ -38,6 +39,7 @@ import { ref,onMounted } from 'vue'
 import { Drawer } from 'sober'
 
 let menuStore = MenuStore()
+let userStore = UserStore()
 const menu = ref<Drawer | null>(null);
 
 onMounted(()=>{
