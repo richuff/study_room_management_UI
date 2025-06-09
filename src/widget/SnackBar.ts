@@ -1,30 +1,30 @@
 import { Snackbar } from 'sober'
 
-function showSuccess(text:string){
+function showSuccess(text: string,duration: number = 2000){
     const dialog = Snackbar.builder({
         text, 
         type: 'success',
         align: "top",
-        duration: 2000
+        duration
     })
     dialog.show()
 }
 
-function showError(text:string){
+function showError(text: string, duration: number = 2000){
         const dialog = Snackbar.builder({
         text, 
         type: 'error',
         align: "top",
-        duration: 2000
+        duration
     })
     dialog.show()
 }
 
-function showSucessWithIcon(text:string,icon:Element){
+function showSucessWithIcon(text:string,icon:Element,duration: number = 2000){
     const dialog = Snackbar.builder({
         text,
         align:"top",
-        duration:2000,
+        duration,
         icon
     })
     dialog.show()
