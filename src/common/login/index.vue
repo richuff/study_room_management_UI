@@ -1,16 +1,16 @@
 <template>
     <CommonBar>
         <div :class="{ main: true, main_menu: !menuStore.isflod }">
-            <div class="main_bar">
-                <div class="login">
+            <div class="main_bar" >
+                <div class="login" style="padding: 1.67rem;">
                     <div class="title">登录账号</div>
-                    <s-text-field label="用户名或邮箱"></s-text-field>
-                    <s-text-field label="密码"></s-text-field>
+                    <s-text-field @input="setEmail($event as InputEvent)" label="用户名或邮箱"></s-text-field>
+                    <s-text-field  @input="setPassword($event as InputEvent)" label="密码"></s-text-field>
                     <div class="forget-pass">
                         <a href="">忘记密码</a>
                     </div>
-                    <s-button>开始存档</s-button>
-                    <s-button @click="ToRegister($router)">还没有账户?戳我注册</s-button>       
+                    <s-button class="button" @click="Login(dataForm)">开始存档</s-button>
+                    <s-button class="button" @click="ToRegister($router)">还没有账户?戳我注册</s-button>       
                     <s-divider style="margin-top: 1.8rem;">使用第三方登录</s-divider>
                 </div>
                 <div class="other_login">
@@ -28,9 +28,16 @@ import BottomBarWithFixed from '@/components/BottomBarWithFixed/index.vue'
 import MenuStore from '@/store/modules/menu';
 import { ToRegister } from '@/utils/router';
 import { useRouter } from 'vue-router';
+import { Login } from '@/api/user/api';
+import type { UserData } from '@/api/user/type';
 let menuStore  = MenuStore()
 let $router = useRouter()
-import { onMounted } from 'vue';
+import { onMounted,reactive } from 'vue';
+
+let dataForm:UserData = reactive<UserData>({
+    email:"",
+    password:""
+})
 
 onMounted(() => {
     menuStore.showBack = true
@@ -40,6 +47,17 @@ onMounted(() => {
     //     i!.style.padding = (Number.parseInt(i!.style.padding) + 1).toString()
     // })
 })
+
+const setEmail = (i: InputEvent) => {
+    const item = i.target as HTMLInputElement
+    dataForm.email = item.value
+}
+
+const setPassword = (i: InputEvent) => {
+    const item = i.target as HTMLInputElement
+    dataForm.password = item.value
+}
+
 </script>
 
 <style lang="less" scoped>
