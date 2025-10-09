@@ -1,0 +1,91 @@
+@import url("../../assets/style.less");
+
+.main{
+    height: calc(98vh - @menu-height);
+
+    .main_bar{
+        background-color: white;
+        height: calc(91vh - @menu-height - @bottom-height);
+        width: calc(100vw - 1.7rem);
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(239, 239, 245);
+        margin:0.4rem auto;
+        padding: 0.42rem;
+        .title{
+            font-size: 2rem;
+            text-align: center;
+        }
+        s-text-field{
+            min-height: 3rem !important;
+            display: block;
+            width: 96%;
+            height: 3rem;
+            padding-left:0.8rem;
+            padding-right: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        s-button{
+            height: 2rem;
+            display: block;
+            width: 96%;
+            margin-left:0.83rem;
+            margin-top: 0.5rem;
+            border-radius: 0.2rem;
+            text-align: center;
+            justify-content: center;
+            padding-top: 0.3rem;
+            align-items: center;
+        }
+        .forpwd{
+            height: 70%;
+            .code{
+                width: 20%;
+                display: inline-block;
+            }
+            .button{
+                width: 30%;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+        }
+        .other_forpwd{
+            margin-top: 3.2rem;
+            background-color: rgb(250, 250, 252);
+            height: calc(90vh - @menu-height - @bottom-height - 80%);
+            text-align: center;
+            padding-top: 0.83rem;
+            font-size: 1.1rem;
+            .tologin{
+                color: rgb(38, 52, 115);
+            }
+            
+            .tologin:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main_menu{
+    height: calc(98vh - @menu-height);
+    .main_bar{
+        border-style: solid;
+        height: calc(91vh - @menu-height - @bottom-height);
+        animation: moveWidth 0.4s;
+        width: calc(100vw - @menu-width - 40px);
+        border-width: 1px;
+        border-color: rgb(239, 239, 245);
+        margin: 0.42rem  0.42rem 0.42rem 0.42rem;
+        padding: 0.42rem;
+    }
+}
+
+@keyframes moveWidth {
+    from{
+        width: calc(100vw - 0.83rem);
+    }
+    to{
+        width: calc(100vw - @menu-width - 1.67rem);
+    }
+}
