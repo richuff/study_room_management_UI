@@ -3,7 +3,7 @@ import {showError} from '@/widget/SnackBar.ts'
 
 //创建axios实例
 let request = axios.create({
-    baseURL: "/api",
+    baseURL: "http://localhost:5173/api",
     timeout: 5000
 })
 //请求拦截器
