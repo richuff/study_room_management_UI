@@ -46,6 +46,54 @@ const constroutes = [
             title: 'register',
         },
     },
+    {
+        path: '/forgetpassword',
+        component: () => import('@/common/forgetpwd/index.vue'),
+        name: 'forgetpassword',
+        meta: {
+            title: 'forgetpassword',
+        },
+    },
+    {
+        path: '/userinfo',
+        component: () => import('@/layout/userinfo/index.vue'),
+        name: 'userinfo',
+        meta: {
+            title: 'userinfo',
+        },
+    },
+    {
+        path: '/retrieval',
+        component: () => import('@/archive/retrieval/index.vue'),
+        name: 'retrieval',
+        meta: {
+            title: 'retrieval',
+        },
+    },
+    {
+        path: '/appointment',
+        component: () => import('@/archive/appointment/index.vue'),
+        name: 'appointment',
+        meta: {
+            title: 'appointment',
+        },
+    },
+    {
+        path: '/inquiry',
+        component: () => import('@/archive/Inquiry/index.vue'),
+        name: 'inquiry',
+        meta: {
+            title: 'inquiry',
+        },
+    },
+    {
+        path: '/setting',
+        component: () => import('@/common/setting/index.vue'),
+        name: 'setting',
+        meta: {
+            title: 'setting',
+        },
+    },
 ]
 
 export default constroutes;

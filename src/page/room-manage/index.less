@@ -1,0 +1,197 @@
+.room-manage-container {
+    padding: 1rem;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        .add-btn {
+            background: #409eff;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+
+            &:hover {
+                background: #66b1ff;
+            }
+        }
+    }
+
+    .loading, .empty {
+        text-align: center;
+        padding: 2rem;
+        color: #666;
+    }
+
+    .room-list {
+        .room-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            .room-info {
+                flex: 1;
+
+                .room-name {
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+
+                .room-capacity {
+                    color: #666;
+                }
+            }
+
+            .room-actions {
+                display: flex;
+                gap: 0.5rem;
+
+                .btn-edit {
+                    background: #e6a23c;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.3rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #ebb563;
+                    }
+                }
+
+                .btn-delete {
+                    background: #f56c6c;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.3rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #f78989;
+                    }
+                }
+            }
+        }
+    }
+
+    .dialog-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+
+        .dialog-content {
+            background: white;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow: auto;
+
+            .dialog-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem;
+                border-bottom: 1px solid #eee;
+
+                h3 {
+                    margin: 0;
+                    font-size: 1.2rem;
+                }
+
+                .close-btn {
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: #999;
+                    line-height: 1;
+
+                    &:hover {
+                        color: #333;
+                    }
+                }
+            }
+
+            .dialog-body {
+                padding: 1.5rem;
+
+                .form-item {
+                    margin-bottom: 1rem;
+
+                    label {
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        font-weight: 500;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 0.8rem;
+                        border: 1px solid #ddd;
+                        border-radius: 0.3rem;
+                        font-size: 1rem;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #409eff;
+                        }
+                    }
+                }
+            }
+
+            .dialog-footer {
+                display: flex;
+                justify-content: flex-end;
+                gap: 0.5rem;
+                padding: 1rem;
+                border-top: 1px solid #eee;
+
+                .btn-cancel {
+                    background: #ddd;
+                    color: #333;
+                    padding: 0.6rem 1.5rem;
+                    border: none;
+                    border-radius: 0.3rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #ccc;
+                    }
+                }
+
+                .btn-confirm {
+                    background: #409eff;
+                    color: white;
+                    padding: 0.6rem 1.5rem;
+                    border: none;
+                    border-radius: 0.3rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #66b1ff;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import url("../../assets/style.less");
+
+.main{
+    height: calc(98vh - @menu-height);
+    margin-top: 0.6rem;
+    .main_bar{
+        background-color: white;
+        height: calc(91vh - @menu-height - @bottom-height);
+        width: calc(100vw - 1.7rem);
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(239, 239, 245);
+        margin:0.4rem auto;
+        padding: 0.42rem;
+    }
+}
+
+.main_menu{
+    height: calc(98vh - @menu-height);
+    .main_bar{
+        border-style: solid;
+        height: calc(91vh - @menu-height - @bottom-height);
+        animation: moveWidth 0.4s;
+        width: calc(100vw - @menu-width - 40px);
+        border-width: 1px;
+        border-color: rgb(239, 239, 245);
+        margin: 0.42rem  0.42rem 0.42rem 0.42rem;
+        padding: 0.42rem;
+    }
+}
+
+.headbox{
+    height: 5rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    .avatar{
+        border-radius: 50%;
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        margin-right: 0.5rem;
+        margin-bottom: -0.5rem;
+        object-fit: cover;
+    }
+    .username{
+        padding-bottom: 5rem;
+        font-size: 2rem;
+    }
+}
+
+
+@keyframes moveWidth {
+    from{
+        width: calc(100vw - 0.83rem);
+    }
+    to{
+        width: calc(100vw - @menu-width - 1.67rem);
+    }
+}
