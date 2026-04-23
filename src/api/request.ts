@@ -6,10 +6,17 @@ let request = axios.create({
     baseURL: "http://localhost:5173/api",
     timeout: 5000
 })
+
 //请求拦截器
 request.interceptors.request.use(config => {
+    // 从localStorage获取token并添加到请求头
+    const token = localStorage.getItem("token")
+    if (token) {
+        config.headers.Authorization = token
+    }
     return config
 });
+
 //响应拦截器
 request.interceptors.response.use((response) => {
     return response.data
@@ -19,7 +26,15 @@ request.interceptors.response.use((response) => {
     let status:number | null = error.response?.status
     switch (status) {
         case 401:
-            msg = "token过期"
+            msg = "token过期，请重新登录"
+            // 清除本地存储
+            localStorage.removeItem("token")
+            localStorage.removeItem("username")
+            localStorage.removeItem("avatar")
+            // 跳转到登录页
+            setTimeout(() => {
+                window.location.href = '/login'
+            }, 1500)
             break
         case 403:
             msg = '无权访问'
@@ -31,7 +46,7 @@ request.interceptors.response.use((response) => {
             msg = "服务器出现问题"
             break
         default:
-            msg = "无网络"
+            msg = "网络错误"
     }
     showError(msg)
     return Promise.reject(error)
